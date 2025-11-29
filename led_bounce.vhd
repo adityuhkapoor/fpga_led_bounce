@@ -30,6 +30,7 @@ process(clk, reset)
 begin
 if reset = '1' then
     count <= (others => '0');
+    led_reg <= (others => '0');
 elsif rising_edge(clk) then
     if count = to_unsigned(100_000_000, 27) then
         count <= to_unsigned(0, 27);
